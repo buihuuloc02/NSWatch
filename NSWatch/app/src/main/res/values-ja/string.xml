@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">禁煙ウォッチ</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_signup">禁煙カルテ</string>
+    <string name="title_activity_start">禁煙ウォッチ</string>
+    <string name="title_activity_watch">禁煙ウォッチ</string>
+    <string name="title_test_list">Items</string>
+    <string name="title_test_detail">test Detail</string>
+    <string name="title_activity_edit_time">禁煙開始日時</string>
+    <string name="title_activity_edit_karte">禁煙カルテ</string>
+    <string name="title_activity_edit_date">禁煙開始日時</string>
+    <string name="title_activity_start_view1">StartViewActivity1</string>
+    <string name="title_activity_start_view2">StartViewActivity2</string>
+    <string name="title_activity_start_view3">StartViewActivity3</string>
+    <string name="title_activity_start_view4">StartViewActivity4</string>
+
+    <string name="text_button_next">次へ</string>
+    <string name="text_button_start">さっそく始める</string>
+
+    <!--Screen sign up-->
+    <string name="text_please_enter_data">あなたのデータを入力してください</string>
+    <string name="text_button_start_smoking">禁煙スタート</string>
+    <string name="text_number_cigarettes">１日何本吸っていますか？</string>
+    <string name="text_number_money">１箱の値段は？</string>
+    <string name="text_unit_cigarettes">本</string>
+    <string name="text_unit_package">円</string>
+    <string name="text_title_error">エラー</string>
+    <string name="text_input_number_correct">あなたのデータを入力してください。</string>
+    <!--<string name="text_input_number_correct">数値を正しく入力してください</string>-->
+
+    <!--Screen main-->
+    <string name="text_total_time">あなたの禁煙時間</string>
+    <string name="text_total_number">禁煙できた本数</string>
+    <string name="text_total_money">節約できた金額</string>
+    <string name="text_extended_longevity">延びた寿命</string>
+    <string name="text_button_post_a_sweet">Twitterに投稿</string>
+    <string name="text_method_calculated_money">※1箱20本で計算しています。</string>
+    <string name="text_method_calculated_heath">※1本あたり5分30寿命が縮むという定説を元に算出しています。</string>
+
+    <!--menu-->
+    <string name="text_menu_watch">禁煙ウォッチ</string>
+    <string name="text_menu_start_date">禁煙開始日時変更</string>
+    <string name="text_menu_condition_data">禁煙カルテ変更</string>
+    <string name="text_menu_reset">リセット</string>
+    <string name="text_menu_sns">SNS投稿</string>
+    <string name="text_menu_switter">Twitterに投稿</string>
+    <string name="text_menu_shop">ショッピング</string>
+    <string name="text_menu_rating">禁煙グッズランキング</string>
+    <string name="text_title_reset">リセット</string>
+    <string name="text_message_confirm_reset">すべてのデータを消去します。本当によろしいですか？</string>
+    <string name="text_button_ok">はい</string>
+    <string name="text_button_cancel">キャンセル</string>
+
+    <!--screen edit time-->
+    <string name="text_button_save">決定</string>
+    <string name="text_button_update">変更</string>
+
+    <string-array name="array_comment">
+        <item>この調子でがんばりましょう！</item>
+        <item>3日、3週間、3年をめどにがんばろう！</item>
+        <item>応援していますよ！この調子！</item>
+        <item>結構、節約できましたね。</item>
+        <item>もっともっと長生きしてくださいね。</item>
+        <item>あなたの体はあなたが守ってあげなきゃね！</item>
+        <item>１本吸うだけで崩れます。気をつけて！</item>
+        <item>ここで吸っては、すべて水の泡ですよ。</item>
+        <item>１本だけ。が命取り。気をつけてくださいね！</item>
+        <item>順調ですね！がんばってください！</item>
+        <item>食事が美味しいと思いませんか？</item>
+        <item>肩の力を抜いて続けていきましょう！</item>
+        <item>禁煙は美容にもいいですよ。</item>
+        <item>禁煙は、健康によくてお財布にもやさしい！</item>
+        <item>これで歯がヤニで汚れませんね！</item>
+        <item>このがんばりを周りの人に自慢しましょう！</item>
+        <item>この頑張りは、すばらしいですね！</item>
+        <item>禁煙できる人って素敵ですよね。</item>
+        <item>すばらしい自制心ですね！がんばって！</item>
+        <item>吸いたくなったらガムを噛んで頑張って！</item>
+        <item>周りが吸っても我慢しているあなたはすごい！</item>
+        <item>タバコ以外のストレス解消法みつけましたか？</item>
+        <item>階段を上がっても息切れしませんね！</item>
+        <item>お肌の調子がいいと思いませんか？</item>
+        <item>その調子で卒煙しちゃいましょう！</item>
+        <item>女性なら化粧ノリの違いを感じますよね！</item>
+        <item>禁煙すると寝起きがよくなるといいます。</item>
+        <item>喉のイガイガが解消されるといいます。</item>
+        <item>心地よい眠りを実感しませんか？</item>
+        <item>寝起きがよくなったと思いませんか？</item>
+        <item>あなたの健康を守るのはあなた自身！</item>
+        <item>やがて目覚めのよい朝がくるでしょう！</item>
+        <item>困難に挑戦する者は美しい！</item>
+        <item>キレイな肺はあなたの選択次第で手に入る！</item>
+        <item>これで堂々と禁煙席で食事できますね！</item>
+        <item>朝までグッスリ！そんな日がやってきます！</item>
+        <item>副流煙で周りの人に迷惑かけずにすみますね！</item>
+        <item>近くの自販機を探さなくてすみますね！</item>
+        <item>ライターを持ち歩かなくてすみますね！</item>
+    </string-array>
+</resources>

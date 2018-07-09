@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@android:drawable/ic_menu_recent_history"
+            android:title="@string/text_menu_watch" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@android:drawable/ic_menu_month"
+            android:title="@string/text_menu_start_date" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="@string/text_menu_condition_data" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@android:drawable/ic_menu_delete"
+            android:title="@string/text_menu_reset" />
+
+    </group>
+    <!--android:icon="@drawable/ic_menu_camera"-->
+    <!--android:icon="@drawable/ic_menu_gallery"-->
+    <!--android:icon="@drawable/ic_menu_slideshow"-->
+    <!--android:icon="@drawable/ic_menu_manage"-->
+
+    <item android:title="@string/text_menu_sns">
+        <menu>
+            <!--<item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="友達に教える" />-->
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/text_menu_switter" />
+        </menu>
+    </item>
+
+    <item android:title="@string/text_menu_shop"
+        android:id="@+id/menuGooglePlay">
+        <menu>
+            <!--<item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="友達に教える" />-->
+            <item
+                android:id="@+id/nav_ec"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="@string/text_menu_rating" />
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="self.edu.nswatch"
+    android:versionCode="6"
+    android:versionName="1.0.5">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignupActivity"
+            android:label="@string/title_activity_signup"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".StartActivity"
+            android:label="@string/title_activity_start"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".WatchActivity"
+            android:label="@string/title_activity_watch"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <!--
+             ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <!--下記zuck用で追加-->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <!--上記zuck用で追加-->
+
+        <activity
+            android:name=".EditTimeActivity"
+            android:label="@string/title_activity_edit_time"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EditKarteActivity"
+            android:label="@string/title_activity_edit_karte"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EditDateActivity"
+            android:label="@string/title_activity_edit_date"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".StartViewActivity1"
+            android:label="@string/title_activity_start_view1"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".StartViewActivity2"
+            android:label="@string/title_activity_start_view2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".StartViewActivity3"
+            android:label="@string/title_activity_start_view3"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".StartViewActivity4"
+            android:label="@string/title_activity_start_view4"
+            android:theme="@style/AppTheme.NoActionBar" />
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+</manifest>

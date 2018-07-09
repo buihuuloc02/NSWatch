@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NoSmokingWatch</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_signup">Condition data</string>
+    <string name="title_activity_start">Non-smoking chart</string>
+    <string name="title_activity_watch">Non-smoking chart</string>
+    <string name="title_test_list">Items</string>
+    <string name="title_test_detail">test Detail</string>
+    <string name="title_activity_edit_time">Start date and time</string>
+    <string name="title_activity_edit_karte">Condition data</string>
+    <string name="title_activity_edit_date">Start date and time</string>
+    <string name="title_activity_start_view1">StartViewActivity1</string>
+    <string name="title_activity_start_view2">StartViewActivity2</string>
+    <string name="title_activity_start_view3">StartViewActivity3</string>
+    <string name="title_activity_start_view4">StartViewActivity4</string>
+
+    <string name="text_button_next">Next</string>
+    <string name="text_button_start">To get started</string>
+
+    <!--Screen sign up-->
+    <string name="text_please_enter_data">Please enter your infomation.</string>
+    <string name="text_button_start_smoking">Start</string>
+    <string name="text_number_cigarettes">How many cigarettes do you smoke a day?</string>
+    <string name="text_number_money">What is the price of your cigarette box?</string>
+    <string name="text_unit_cigarettes"></string>
+    <string name="text_unit_package"></string>
+    <string name="text_title_error">Error</string>
+    <string name="text_input_number_correct">Please enter your infomation.</string>
+
+    <!--Screen main-->
+    <string name="text_total_time">Total time</string>
+    <string name="text_total_number">Total number</string>
+    <string name="text_total_money">Total money</string>
+    <string name="text_extended_longevity">Extended Longevity</string>
+    <string name="text_button_post_a_sweet">Post a Tweet</string>
+    <string name="text_method_calculated_money">※Calculated with 20 boxes per box</string>
+    <string name="text_method_calculated_heath">※It is calculated based on the theory that the lifetime will shrink 5 minutes 30 seconds per one.</string>
+    <!--menu-->
+    <string name="text_menu_watch">Watch</string>
+    <string name="text_menu_start_date">Start date</string>
+    <string name="text_menu_condition_data">Condition data</string>
+    <string name="text_menu_reset">Reset</string>
+    <string name="text_menu_sns">SNS</string>
+    <string name="text_menu_switter">Twitter</string>
+    <string name="text_menu_shop">Google play</string>
+    <string name="text_menu_rating">Rate app</string>
+    <string name="text_title_reset">Reset</string>
+    <string name="text_message_confirm_reset">Reset Non Smoking Start Date. OK?</string>
+    <string name="text_button_ok">OK</string>
+    <string name="text_button_cancel">Cancel</string>
+
+    <!--screen edit time-->
+    <string name="text_button_save">Save</string>
+    <string name="text_button_update">Change</string>
+
+    <string-array name="array_comment">
+        <item>Let\’s keep up the good work! </item>
+        <item>Let\'s keep it up until it passes 3 days, 3 weeks, and 3 years!</item>
+        <item>We are on your side!　Please go on like this!</item>
+        <item>You have saved a lot!</item>
+        <item>I hope you live even longer.</item>
+        <item>Your body must be protected by you!</item>
+        <item>Smoke from just one cigarette destroies everything.Be careful!</item>
+        <item>One smoke here ruins everything.</item>
+        <item>Just one tobacco is enough to devastate you. Be careful!</item>
+        <item>Good job! Please do your best!</item>
+        <item>Don\'t you think meals taste good?</item>
+        <item>Please feel relaxed and keep on going!</item>
+        <item>Non smoking is good for beauty.</item>
+        <item>Non smoking is good for health and wallet!</item>
+        <item>Your teeth will not be tainted with tar anymore!</item>
+        <item>Let\'s boast your endurance to your friends!</item>
+        <item>Your patience is amazing!</item>
+        <item>I admire those who can quit smoking.</item>
+        <item>You have a highly good self-control. Fighting!</item>
+        <item>When you feel like smoking, please chew gum and hang on!</item>
+        <item>You are great, not smoking while people around you are smoking!</item>
+        <item>Did you find any stress relief method other than cigarettes?</item>
+        <item>You do not get short of breath even if you go up stairs!</item>
+        <item>Do you not think you skin is in good condition?</item>
+        <item>Keep it up and let\'s finish smoking!</item>
+        <item>Females can sense the difference of fitting make-up!</item>
+        <item>I hear that if you quit smoking you can easily wake up.</item>
+        <item>It is said that thorny throat goes away.</item>
+        <item>Did you have a comfortable sleep?</item>
+        <item>Is your sleep getting better?</item>
+        <item>You are the only one who can keep you in a good health!</item>
+        <item>You will soon wake up feeling good!</item>
+        <item>Those people who love challenging themselves are awesome!</item>
+        <item>Lung cleaning is available depending on your choice!</item>
+        <item>Now you can have a meal at a nonsmoking seat confidently!</item>
+        <item>Have a sound sleep until the morning! Those day will never end!.</item>
+        <item>You are not troubling anyone beside you by secondhand smoke!</item>
+        <item>You don\'t have to look for the vending machine around there.</item>
+        <item>You do not have to carry a light anymore!</item>
+    </string-array>
+</resources>

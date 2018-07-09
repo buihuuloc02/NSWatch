@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="self.edu.nswatch.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <!--上記RelativeLayoutより下記削除
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+-->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="false"
+        android:baselineAligned="false"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="#f5f5f5"
+            android:layout_weight="0">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2"
+                android:src="@drawable/watch"
+                android:layout_marginLeft="21dp"
+                android:layout_marginStart="21dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12日12:34:56"
+                android:id="@+id/dateLabel"
+                android:textSize="35dp"
+                android:fontFamily="@string/abc_action_bar_up_description"
+                android:textColor="#000000"
+                android:layout_below="@+id/textView7"
+                android:layout_alignLeft="@+id/textView7"
+                android:layout_alignStart="@+id/textView7" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_total_time"
+                android:id="@+id/textView7"
+                android:textColor="#000000"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/imageView2"
+                android:layout_toEndOf="@+id/imageView2"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="14dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_weight="0"
+            android:background="#eaeaea">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView3"
+                android:src="@drawable/stop"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="21dp"
+                android:layout_marginStart="21dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3本"
+                android:id="@+id/numLabel"
+                android:textSize="35dp"
+                android:textColor="#000000"
+                android:layout_below="@+id/textView8"
+                android:layout_alignLeft="@+id/textView8"
+                android:layout_alignStart="@+id/textView8" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_total_number"
+                android:id="@+id/textView8"
+                android:textColor="#000000"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/imageView3"
+                android:layout_toEndOf="@+id/imageView3"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="14dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_weight="0"
+            android:background="#f5f5f5">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView4"
+                android:src="@drawable/money"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="21dp"
+                android:layout_marginStart="21dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_total_money"
+                android:id="@+id/textView9"
+                android:textColor="#000000"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/imageView4"
+                android:layout_toEndOf="@+id/imageView4"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1,234円"
+                android:id="@+id/priceLabel"
+                android:textSize="35dp"
+                android:textColor="#000000"
+                android:layout_below="@+id/textView9"
+                android:layout_alignLeft="@+id/textView9"
+                android:layout_alignStart="@+id/textView9" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_method_calculated_money"
+                android:id="@+id/textView11"
+                android:textSize="9dp"
+                android:layout_alignTop="@+id/textView9"
+                android:layout_toRightOf="@+id/textView9"
+                android:layout_toEndOf="@+id/textView9"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="10dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#eaeaea"
+            android:layout_weight="0">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12日24時間56分"
+                android:id="@+id/lifeLabel"
+                android:textSize="32dp"
+                android:textColor="#000000"
+                android:layout_below="@+id/textView10"
+                android:layout_alignLeft="@+id/textView10"
+                android:layout_alignStart="@+id/textView10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_extended_longevity"
+                android:id="@+id/textView10"
+                android:textColor="#000000"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/imageView5"
+                android:layout_toEndOf="@+id/imageView5"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_method_calculated_heath"
+                android:id="@+id/textView12"
+                android:textSize="7.5dp"
+                android:layout_below="@+id/lifeLabel"
+                android:layout_alignLeft="@+id/lifeLabel"
+                android:layout_alignStart="@+id/lifeLabel" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView5"
+                android:src="@drawable/life"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="21dp"
+                android:layout_marginStart="21dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="応援メッセージ"
+                android:id="@+id/commentLabel"
+                android:textSize="15dp"
+                android:textColor="#000000"
+                android:layout_alignTop="@+id/imageView6"
+                android:layout_toRightOf="@+id/imageView6"
+                android:layout_toEndOf="@+id/imageView6"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="1dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView6"
+                android:src="@drawable/pencil"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp" />
+
+            <Button
+                android:background="@drawable/twitter_btn"
+                android:layout_width="205dp"
+                android:layout_height="42dp"
+                android:text="@string/text_button_post_a_sweet"
+                android:id="@+id/button2"
+                android:onClick="tweetBtn"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#ffffff"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

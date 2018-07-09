@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "775329944920",
+    "firebase_url": "https://nswatch-8569f.firebaseio.com",
+    "project_id": "nswatch-8569f",
+    "storage_bucket": "nswatch-8569f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775329944920:android:b0df3aeec5a5ecc0",
+        "android_client_info": {
+          "package_name": "self.edu.nswatch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "775329944920-109l3749d2mpibkrnhm82sb3vevulktt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyBEmspKqB3yTfdEyNzB-h1mWTonl8np4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
