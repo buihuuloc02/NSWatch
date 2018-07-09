@@ -3,8 +3,6 @@ package self.edu.nswatch;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -57,7 +55,7 @@ public class EditDateActivity extends AppCompatActivity {
         int day = cal.get(Calendar.DAY_OF_MONTH);
 
         //DatePickerに設定
-        DatePicker datepicker = (DatePicker)findViewById(R.id.datePicker);
+        DatePicker datepicker = (DatePicker) findViewById(R.id.datePicker);
         datepicker.updateDate(year, month, day);
 
         //最大値と最小値の設定-------------------------------------------------
@@ -89,9 +87,9 @@ public class EditDateActivity extends AppCompatActivity {
         //保存されてるデータを読み込んで表示切り替え-----------------------------
         //Preferencesデータ読み込み
         SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
-        int saveFlag = pref.getInt("saveFlag",1);
+        int saveFlag = pref.getInt("saveFlag", 1);
 
-        if (saveFlag == 1){
+        if (saveFlag == 1) {
 
             SharedPreferences.Editor e = pref.edit();
             e.putInt("saveFlag", 0);
@@ -103,13 +101,13 @@ public class EditDateActivity extends AppCompatActivity {
 
     public void nextBtn(View view) {
 
-        DatePicker datePicker = (DatePicker)findViewById(R.id.datePicker);
+        DatePicker datePicker = (DatePicker) findViewById(R.id.datePicker);
         int year = datePicker.getYear();//年を取得
         int month = datePicker.getMonth();//月を取得
         int day = datePicker.getDayOfMonth();//日を取得
-        String datePickerStr = (String.format("%d/%d/%d",year,month+1,day ));
+        String datePickerStr = (String.format("%d/%d/%d", year, month + 1, day));
 
-        Intent i = new Intent(getApplicationContext(),EditTimeActivity.class);
+        Intent i = new Intent(getApplicationContext(), EditTimeActivity.class);
         i.putExtra("datePickerStr", datePickerStr);
         startActivity(i);
 
