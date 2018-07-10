@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,7 +18,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.database.DataSnapshot;
@@ -228,7 +226,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    private void initZuckAd(){
+    private void initZuckAd() {
         //_42fbb800ec   _8dddf8edfb
         mAdInterstitial = new AdInterstitial(this, "_42fbb800ec", new AdInterstitialListener() {
             @Override
@@ -266,6 +264,7 @@ public class MainActivity extends AppCompatActivity
         });
         mAdInterstitial.load();
     }
+
     //タイマークラス派生クラス------------------------------------------------------
     //run()に定周期で処理したい内容を記述
     public class MainTimerTask extends TimerTask {
@@ -408,16 +407,20 @@ public class MainActivity extends AppCompatActivity
         //1箱の値段取得
 
         // 1本あたりの金額
-        float one_price = smokePrice / 20;
+        float one_price_float = (float) smokePrice / 20;
+        long one_price_long = (long) one_price_float;//smokePrice / 20;
         // 節約できた金額
-        float total_price = one_price * stop_num;
-        long total_price_long = (long) total_price;
+        float total_price_float = (float) one_price_float * stop_num;
+        long total_price_long = (long) one_price_long * stop_num;
         // 数値を3桁カンマ切りの文字列に整形する
-        String str4 = String.format("%1$,3d", total_price_long).replace(" ", "");
+
+        String str4 = total_price_float > 0 ? String.format("%.2f", total_price_float).replace(" ", "") : "0";
+
         //円を追加
         String str5 = (str4);
         //表示
         if (getLanguage().toLowerCase().equals(langJa.toLowerCase())) {
+            str4 = String.format("%1$,3d", total_price_long).replace(" ", "");
             str5 = (str4 + "円");
         }
         TextView priceLabel = (TextView) findViewById(R.id.priceLabel);

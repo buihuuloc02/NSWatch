@@ -55,22 +55,6 @@
             android:name=".EditDateActivity"
             android:label="@string/title_activity_edit_date"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".StartViewActivity1"
-            android:label="@string/title_activity_start_view1"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".StartViewActivity2"
-            android:label="@string/title_activity_start_view2"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".StartViewActivity3"
-            android:label="@string/title_activity_start_view3"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".StartViewActivity4"
-            android:label="@string/title_activity_start_view4"
-            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
