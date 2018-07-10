@@ -408,7 +408,7 @@ public class MainActivity extends AppCompatActivity
 
         // 1本あたりの金額
         float one_price_float = (float) smokePrice / 20;
-        long one_price_long = (long) one_price_float;//smokePrice / 20;
+        long one_price_long = smokePrice / 20;
         // 節約できた金額
         float total_price_float = (float) one_price_float * stop_num;
         long total_price_long = (long) one_price_long * stop_num;
