@@ -2,20 +2,21 @@ package self.edu.nswatch;
 
 import android.app.AlertDialog;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
+import android.text.InputFilter;
+import android.text.InputType;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import self.edu.nswatch.dummy.BaseActivity;
 
-public class EditKarteActivity extends AppCompatActivity {
+public class EditKarteActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,15 +29,15 @@ public class EditKarteActivity extends AppCompatActivity {
         //Preferencesデータ読み込み
         SharedPreferences data = getSharedPreferences("pref", MODE_PRIVATE);
         int smokeNum = data.getInt("smokeNum", 1);
-        int smokePrice = data.getInt("smokePrice", 1);
+        String smokePrice = data.getString("smokePrice", "1");
         String smokeNumStr = String.valueOf(smokeNum);
-        String smokePriceStr = String.valueOf(smokePrice);
+        String smokePriceStr = (smokePrice);
 
         //入力フォームに初期設定として数値入力する
-        EditText editTextNum = (EditText)this.findViewById(R.id.editTextNum);
-        editTextNum.setText (smokeNumStr);
-        EditText editTextPrice = (EditText)this.findViewById(R.id.editTextPrice);
-        editTextPrice.setText (smokePriceStr);
+        EditText editTextNum = (EditText) this.findViewById(R.id.editTextNum);
+        editTextNum.setText(smokeNumStr);
+        initView();
+        editTextPrice.setText(smokePriceStr);
 
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -48,17 +49,54 @@ public class EditKarteActivity extends AppCompatActivity {
             }
         });
         */
+
+    }
+
+    private EditText editTextPrice;
+
+    private void initView() {
+        editTextPrice = (EditText) this.findViewById(R.id.editTextPrice);
+
+        if (isLanguageJA()) {
+            editTextPrice.setInputType(InputType.TYPE_CLASS_NUMBER);
+            editTextPrice.setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
+        } else {
+            editTextPrice.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+            editTextPrice.setFilters(new InputFilter[]{new BaseActivity.InputFilterMinMax("0", "1000"), new InputFilter.LengthFilter(6)});
+            editTextPrice.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    String value = s.toString();
+                    if(!TextUtils.isEmpty(value)){
+                        float valueFloat = Float.parseFloat(value);
+                        if(valueFloat >= 1000){
+                            editTextPrice.setText("");
+                        }
+                    }
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });
+        }
+
     }
 
     public void saveBtn(View view) {
 
         //本数の入力フォームの入力テキストをintデータにする
-        EditText editTextNum = (EditText)this.findViewById(R.id.editTextNum);
+        EditText editTextNum = (EditText) this.findViewById(R.id.editTextNum);
         Editable getText = editTextNum.getText();
         //値段の入力フォームの入力テキストをintデータにする
-        EditText editTextPrice = (EditText)this.findViewById(R.id.editTextPrice);
         Editable getText2 = editTextPrice.getText();
-
+        String strSmokePrice = getText2.toString();
         if ((editTextNum.getText().toString().equals("")) || ((editTextPrice.getText().toString().equals("")))) {
 
             Log.v("Log", "未入力");
@@ -73,13 +111,13 @@ public class EditKarteActivity extends AppCompatActivity {
             //ダイアログ表示
             alert.show();
 
-        }else{
+        } else {
 
             //intに変換
             int smokeNum = Integer.parseInt(getText.toString());
-            int smokePrice = Integer.parseInt(getText2.toString());
+            float smokePrice = Float.parseFloat(getText2.toString());
 
-            if ((smokeNum == 0)||(smokePrice == 0)){
+            if ((smokeNum == 0) || (smokePrice == 0)) {
 
                 Log.v("Log", "数値が0");
                 //アラート表示
@@ -93,7 +131,7 @@ public class EditKarteActivity extends AppCompatActivity {
                 //ダイアログ表示
                 alert.show();
 
-            }else {
+            } else {
                 //現在時間取得
                 //Date now = new Date();
                 //SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -104,7 +142,7 @@ public class EditKarteActivity extends AppCompatActivity {
                 SharedPreferences.Editor e = pref.edit();
                 //e.putInt("nsFlag", 1);
                 e.putInt("smokeNum", smokeNum);
-                e.putInt("smokePrice", smokePrice);
+                e.putString("smokePrice", strSmokePrice);
                 //e.putString("startDate", startDateStr);
                 //e.putString("startDate", now.getTime());
                 e.commit();

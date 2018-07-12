@@ -58,7 +58,7 @@
         android:layout_below="@+id/textView3"
         android:layout_marginEnd="21dp"
         android:layout_marginRight="21dp"
-        android:ems="2"
+        android:ems="3"
         android:gravity="right"
         android:inputType="number"
         android:maxLength="2"
@@ -84,10 +84,8 @@
         android:layout_alignLeft="@+id/editTextNum"
         android:layout_alignStart="@+id/editTextNum"
         android:layout_below="@+id/textView4"
-        android:ems="2"
+        android:ems="3"
         android:gravity="right"
-        android:inputType="number"
-        android:maxLength="3"
         android:textColor="#0E6E6C"
         android:textSize="50dp" />
 

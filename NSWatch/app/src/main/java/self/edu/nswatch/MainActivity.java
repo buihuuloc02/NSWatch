@@ -325,15 +325,21 @@ public class MainActivity extends AppCompatActivity
 
         //保存されてるデータを読み込んで表示切り替え-----------------------------
         //Preferencesデータ読み込み
+        int smokePrice_ja;
+        float smokePrice_en;
         SharedPreferences data = getSharedPreferences("pref", MODE_PRIVATE);
         int nsFlag = data.getInt("nsFlag", 1);
         int smokeNum = data.getInt("smokeNum", 1);
-        int smokePrice = data.getInt("smokePrice", 1);
+        String smokePriceCurrent = data.getString("smokePrice", "1");
+
+        smokePrice_en = Float.parseFloat(smokePriceCurrent);
+        smokePrice_ja = (int)smokePrice_en;
+
         String startDateStr = data.getString("startDate", "");
 
         Log.v("Log", "nsFlag" + nsFlag);
         Log.v("Log", "smokeNum" + smokeNum);
-        Log.v("Log", "smokePrice" + smokePrice);
+        Log.v("Log", "smokePrice" + smokePriceCurrent);
         Log.v("Log", "startDate" + startDateStr); //yyyy/MM/dd HH:mm:ss
 
         //禁煙時間の表示------------------------------------------------------
@@ -407,8 +413,8 @@ public class MainActivity extends AppCompatActivity
         //1箱の値段取得
 
         // 1本あたりの金額
-        float one_price_float = (float) smokePrice / 20;
-        long one_price_long = smokePrice / 20;
+        float one_price_float = (float) smokePrice_en / 20;
+        long one_price_long = smokePrice_ja / 20;
         // 節約できた金額
         float total_price_float = (float) one_price_float * stop_num;
         long total_price_long = (long) one_price_long * stop_num;
