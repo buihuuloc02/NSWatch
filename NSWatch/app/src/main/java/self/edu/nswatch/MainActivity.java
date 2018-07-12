@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
@@ -57,7 +58,7 @@ import hotchemi.android.rate.OnClickButtonListener;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+private ImageView imageViewIconPrice;
     private Timer mainTimer;                    //タイマー用
     private MainTimerTask mainTimerTask;        //タイマタスククラス
     private Handler mHandler = new Handler();   //UI Threadへのpost用ハンドラ
@@ -224,6 +225,8 @@ public class MainActivity extends AppCompatActivity
             AppRate.showRateDialogIfMeetsConditions(this);
             //end-----------------------------------------------------------------------
         }
+        imageViewIconPrice = (ImageView) findViewById(R.id.imageView4);
+
     }
 
     private void initZuckAd() {
@@ -282,12 +285,22 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    private void setImagePrice(){
+
+        String langJa = "ja";
+        if (getLanguage().toLowerCase().equals(langJa.toLowerCase())) {
+            imageViewIconPrice.setBackgroundResource(R.drawable.money);
+        }else{
+            imageViewIconPrice.setBackgroundResource(R.drawable.money_en);
+        }
+    }
     @Override
     public void onResume() {
         super.onResume();
         Log.v("LifeCycle", "onResume");
         //インタースティシャル広告表示メソッド実行
         showInterstitialAd();
+        setImagePrice();
     }
 
     @Override
