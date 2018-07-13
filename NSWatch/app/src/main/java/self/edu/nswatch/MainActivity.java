@@ -343,16 +343,23 @@ private ImageView imageViewIconPrice;
         SharedPreferences data = getSharedPreferences("pref", MODE_PRIVATE);
         int nsFlag = data.getInt("nsFlag", 1);
         int smokeNum = data.getInt("smokeNum", 1);
-        String smokePriceCurrent = data.getString("smokePrice", "1");
 
-        smokePrice_en = Float.parseFloat(smokePriceCurrent);
-        smokePrice_ja = (int)smokePrice_en;
+        smokePrice_ja = data.getInt("smokePrice", -1);
+        smokePrice_en = data.getFloat("smokePrice_en", -1);
+
+        if(smokePrice_ja == -1){
+            smokePrice_ja = (int) smokePrice_en;
+        }
+        if(smokePrice_en == -1){
+            smokePrice_en = (float) smokePrice_ja;
+        }
+
 
         String startDateStr = data.getString("startDate", "");
 
         Log.v("Log", "nsFlag" + nsFlag);
         Log.v("Log", "smokeNum" + smokeNum);
-        Log.v("Log", "smokePrice" + smokePriceCurrent);
+        Log.v("Log", "smokePrice" + smokePrice_ja);
         Log.v("Log", "startDate" + startDateStr); //yyyy/MM/dd HH:mm:ss
 
         //禁煙時間の表示------------------------------------------------------

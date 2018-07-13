@@ -108,8 +108,9 @@ public class SignupActivity extends BaseActivity {
 
             //intに変換
             int smokeNum = Integer.parseInt(getText.toString());
-            float smokePrice = Float.parseFloat(getText2.toString());
-            String strSmokePrice = getText2.toString();
+            float smokePrice_en = Float.parseFloat(getText2.toString());
+            int smokePrice = Integer.parseInt(getText2.toString());
+
 
             if ((smokeNum == 0) || (smokePrice == 0)) {
 
@@ -136,7 +137,8 @@ public class SignupActivity extends BaseActivity {
                 SharedPreferences.Editor e = pref.edit();
                 e.putInt("nsFlag", 1);
                 e.putInt("smokeNum", smokeNum);
-                e.putString("smokePrice", strSmokePrice);
+                e.putInt("smokePrice", smokePrice);
+                e.putFloat("smokePrice_en", smokePrice_en);
                 e.putString("startDate", startDateStr);
                 //e.putString("startDate", now.getTime());
                 e.commit();

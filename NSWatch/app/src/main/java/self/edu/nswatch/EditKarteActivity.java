@@ -29,9 +29,20 @@ public class EditKarteActivity extends BaseActivity {
         //Preferencesデータ読み込み
         SharedPreferences data = getSharedPreferences("pref", MODE_PRIVATE);
         int smokeNum = data.getInt("smokeNum", 1);
-        String smokePrice = data.getString("smokePrice", "1");
+        int smokePrice = data.getInt("smokePrice", -1);
+        float smokePrice_en = data.getFloat("smokePrice_en", -1);
+        if(smokePrice == -1){
+            smokePrice = (int) smokePrice_en;
+        }
+        if(smokePrice_en == -1){
+            smokePrice_en = (float) smokePrice;
+        }
+
         String smokeNumStr = String.valueOf(smokeNum);
-        String smokePriceStr = (smokePrice);
+        String smokePriceStr = (smokePrice_en) + "";
+        if(isLanguageJA()){
+            smokePriceStr = (smokePrice) + "";
+        }
 
         //入力フォームに初期設定として数値入力する
         EditText editTextNum = (EditText) this.findViewById(R.id.editTextNum);
@@ -115,7 +126,8 @@ public class EditKarteActivity extends BaseActivity {
 
             //intに変換
             int smokeNum = Integer.parseInt(getText.toString());
-            float smokePrice = Float.parseFloat(getText2.toString());
+            float smokePrice_en = Float.parseFloat(getText2.toString());
+            int smokePrice = Integer.parseInt(getText2.toString());
 
             if ((smokeNum == 0) || (smokePrice == 0)) {
 
@@ -142,7 +154,8 @@ public class EditKarteActivity extends BaseActivity {
                 SharedPreferences.Editor e = pref.edit();
                 //e.putInt("nsFlag", 1);
                 e.putInt("smokeNum", smokeNum);
-                e.putString("smokePrice", strSmokePrice);
+                e.putInt("smokePrice", smokePrice);
+                e.putFloat("smokePrice_en", smokePrice_en);
                 //e.putString("startDate", startDateStr);
                 //e.putString("startDate", now.getTime());
                 e.commit();
