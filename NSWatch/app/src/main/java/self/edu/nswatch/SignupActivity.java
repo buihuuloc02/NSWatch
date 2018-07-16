@@ -7,7 +7,6 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
-import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -62,9 +61,9 @@ public class SignupActivity extends BaseActivity {
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
                     String value = s.toString();
-                    if(!TextUtils.isEmpty(value)){
+                    if (!TextUtils.isEmpty(value)) {
                         float valueFloat = Float.parseFloat(value);
-                        if(valueFloat >= 1000){
+                        if (valueFloat >= 1000) {
                             editTextPrice.setText("");
                         }
                     }
@@ -78,7 +77,6 @@ public class SignupActivity extends BaseActivity {
         }
 
     }
-
 
 
     public void saveBtn(View view) {
@@ -109,7 +107,7 @@ public class SignupActivity extends BaseActivity {
             //intに変換
             int smokeNum = Integer.parseInt(getText.toString());
             float smokePrice_en = Float.parseFloat(getText2.toString());
-            int smokePrice = Integer.parseInt(getText2.toString());
+            int smokePrice = (int) smokePrice_en;
 
 
             if ((smokeNum == 0) || (smokePrice == 0)) {

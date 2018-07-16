@@ -2,7 +2,6 @@ package self.edu.nswatch;
 
 import android.app.AlertDialog;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -31,16 +30,16 @@ public class EditKarteActivity extends BaseActivity {
         int smokeNum = data.getInt("smokeNum", 1);
         int smokePrice = data.getInt("smokePrice", -1);
         float smokePrice_en = data.getFloat("smokePrice_en", -1);
-        if(smokePrice == -1){
+        if (smokePrice == -1) {
             smokePrice = (int) smokePrice_en;
         }
-        if(smokePrice_en == -1){
+        if (smokePrice_en == -1) {
             smokePrice_en = (float) smokePrice;
         }
 
         String smokeNumStr = String.valueOf(smokeNum);
         String smokePriceStr = (smokePrice_en) + "";
-        if(isLanguageJA()){
+        if (isLanguageJA()) {
             smokePriceStr = (smokePrice) + "";
         }
 
@@ -83,9 +82,9 @@ public class EditKarteActivity extends BaseActivity {
                 @Override
                 public void onTextChanged(CharSequence s, int start, int before, int count) {
                     String value = s.toString();
-                    if(!TextUtils.isEmpty(value)){
+                    if (!TextUtils.isEmpty(value)) {
                         float valueFloat = Float.parseFloat(value);
-                        if(valueFloat >= 1000){
+                        if (valueFloat >= 1000) {
                             editTextPrice.setText("");
                         }
                     }
@@ -127,7 +126,7 @@ public class EditKarteActivity extends BaseActivity {
             //intに変換
             int smokeNum = Integer.parseInt(getText.toString());
             float smokePrice_en = Float.parseFloat(getText2.toString());
-            int smokePrice = Integer.parseInt(getText2.toString());
+            int smokePrice = (int) smokePrice_en;
 
             if ((smokeNum == 0) || (smokePrice == 0)) {
 
