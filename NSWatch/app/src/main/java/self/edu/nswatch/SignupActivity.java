@@ -2,6 +2,8 @@ package self.edu.nswatch;
 
 import android.app.AlertDialog;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -50,10 +52,10 @@ public class SignupActivity extends BaseActivity {
             editTextPrice.setInputType(InputType.TYPE_CLASS_NUMBER);
             editTextPrice.setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
         } else {
-            editTextPrice.setInputType(InputType.TYPE_CLASS_TEXT);
-            editTextPrice.setRawInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
-            //editTextPrice.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
-            //editTextPrice.setRawInputType(Configuration.KEYBOARD_QWERTY);
+            String manufacturer = Build.MANUFACTURER;
+            String manufacturer_error = "samsung";
+            editTextPrice.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+            editTextPrice.setRawInputType(Configuration.KEYBOARD_QWERTY);
             editTextPrice.setFilters(new InputFilter[]{new InputFilterMinMax("0", "1000"), new InputFilter.LengthFilter(6)});
             editTextPrice.addTextChangedListener(new TextWatcher() {
                 @Override
