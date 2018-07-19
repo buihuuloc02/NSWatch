@@ -46,6 +46,7 @@ public class EditKarteActivity extends BaseActivity {
         //入力フォームに初期設定として数値入力する
         EditText editTextNum = (EditText) this.findViewById(R.id.editTextNum);
         editTextNum.setText(smokeNumStr);
+        editTextPrice = (EditText) this.findViewById(R.id.editTextPrice);
         initView();
         editTextPrice.setText(smokePriceStr);
 
@@ -65,14 +66,16 @@ public class EditKarteActivity extends BaseActivity {
     private EditText editTextPrice;
 
     private void initView() {
-        editTextPrice = (EditText) this.findViewById(R.id.editTextPrice);
 
         if (isLanguageJA()) {
             editTextPrice.setInputType(InputType.TYPE_CLASS_NUMBER);
             editTextPrice.setFilters(new InputFilter[]{new InputFilter.LengthFilter(3)});
         } else {
-            editTextPrice.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
-            editTextPrice.setFilters(new InputFilter[]{new BaseActivity.InputFilterMinMax("0", "1000"), new InputFilter.LengthFilter(6)});
+            editTextPrice.setInputType(InputType.TYPE_CLASS_TEXT);
+            editTextPrice.setRawInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+            //editTextPrice.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
+            //editTextPrice.setRawInputType(Configuration.KEYBOARD_QWERTY);
+            editTextPrice.setFilters(new InputFilter[]{new InputFilterMinMax("0", "1000"), new InputFilter.LengthFilter(6)});
             editTextPrice.addTextChangedListener(new TextWatcher() {
                 @Override
                 public void beforeTextChanged(CharSequence s, int start, int count, int after) {

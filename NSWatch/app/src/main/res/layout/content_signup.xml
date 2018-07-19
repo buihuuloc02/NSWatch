@@ -82,7 +82,7 @@
         android:ems="3"
         android:id="@+id/editTextPrice"
         android:textSize="50dp"
-        android:maxLength="3"
+
         android:layout_below="@+id/textView4"
         android:layout_alignLeft="@+id/editTextNum"
         android:layout_alignStart="@+id/editTextNum"

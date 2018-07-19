@@ -41,7 +41,21 @@ public class BaseActivity extends AppCompatActivity {
         @Override
         public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
             try {
-                float input = Float.parseFloat(dest.toString() + source.toString());
+                boolean digitsOnly = TextUtils.isDigitsOnly(source.toString());
+                float input = 0;
+                if (digitsOnly) {
+                    input = Float.parseFloat(dest.toString() + source.toString());
+                } else {
+                    if (source.toString().equals(".")) {
+                        input = Float.parseFloat(dest.toString());
+                    } else {
+                        if (isNumber(source.toString())) {
+                            input = Float.parseFloat(source.toString());
+                        } else {
+                            return "";
+                        }
+                    }
+                }
                 if (isInRange(min, max, input) && !checkHasTwoDigit(input + ""))
                     return null;
             } catch (NumberFormatException nfe) {
@@ -60,6 +74,20 @@ public class BaseActivity extends AppCompatActivity {
             if (a.length >= 2) {
                 int decimals = a[1].length();
                 if (decimals > 2) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean isNumber(String value) {
+        if (!TextUtils.isEmpty(value) && value.contains(".")) {
+            String[] a = value.split("\\.");
+            if (a.length >= 2) {
+                int decimals1 = a[0].length();
+                int decimals2 = a[1].length();
+                if (TextUtils.isDigitsOnly(decimals1 + "") && TextUtils.isDigitsOnly(decimals2 + "")) {
                     return true;
                 }
             }
