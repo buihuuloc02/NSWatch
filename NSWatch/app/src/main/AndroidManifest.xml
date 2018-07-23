@@ -25,9 +25,11 @@
         <activity
             android:name=".SignupActivity"
             android:label="@string/title_activity_signup"
+            android:windowSoftInputMode="stateAlwaysHidden"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".StartActivity"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_start"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -51,6 +53,8 @@
         <activity
             android:name=".EditKarteActivity"
             android:label="@string/title_activity_edit_karte"
+            android:configChanges="orientation|screenSize"
+            android:windowSoftInputMode="stateAlwaysHidden"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".EditDateActivity"

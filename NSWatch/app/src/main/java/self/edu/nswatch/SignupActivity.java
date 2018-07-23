@@ -13,6 +13,7 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 
 import java.text.SimpleDateFormat;
@@ -22,6 +23,9 @@ import self.edu.nswatch.dummy.BaseActivity;
 //import android.widget.TextView;
 
 public class SignupActivity extends BaseActivity {
+
+    private EditText editTextPrice;
+    private EditText editTextNum ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +47,10 @@ public class SignupActivity extends BaseActivity {
         initView();
     }
 
-    private EditText editTextPrice;
 
     private void initView() {
         editTextPrice = (EditText) this.findViewById(R.id.editTextPrice);
+        editTextNum = (EditText) this.findViewById(R.id.editTextNum);
 
         if (isLanguageJA()) {
             editTextPrice.setInputType(InputType.TYPE_CLASS_NUMBER);
@@ -80,14 +84,14 @@ public class SignupActivity extends BaseActivity {
                 }
             });
         }
-
+        editTextPrice.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI);
+        editTextNum.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI);
     }
 
 
     public void saveBtn(View view) {
 
         //本数の入力フォームの入力テキストをintデータにする
-        EditText editTextNum = (EditText) this.findViewById(R.id.editTextNum);
         Editable getText = editTextNum.getText();
         //値段の入力フォームの入力テキストをintデータにする
 

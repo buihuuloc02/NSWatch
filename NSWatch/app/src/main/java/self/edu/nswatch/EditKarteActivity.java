@@ -12,11 +12,15 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 
 import self.edu.nswatch.dummy.BaseActivity;
 
 public class EditKarteActivity extends BaseActivity {
+
+    private EditText editTextPrice;
+    private EditText editTextNum;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +49,10 @@ public class EditKarteActivity extends BaseActivity {
         }
 
         //入力フォームに初期設定として数値入力する
-        EditText editTextNum = (EditText) this.findViewById(R.id.editTextNum);
-        editTextNum.setText(smokeNumStr);
+        editTextNum = (EditText) this.findViewById(R.id.editTextNum);
+
         editTextPrice = (EditText) this.findViewById(R.id.editTextPrice);
+        editTextNum.setText(smokeNumStr);
         initView();
         editTextPrice.setText(smokePriceStr);
 
@@ -63,8 +68,6 @@ public class EditKarteActivity extends BaseActivity {
         */
 
     }
-
-    private EditText editTextPrice;
 
     private void initView() {
 
@@ -100,13 +103,15 @@ public class EditKarteActivity extends BaseActivity {
                 }
             });
         }
+        editTextPrice.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI);
+        editTextNum.setImeOptions(EditorInfo.IME_FLAG_NO_EXTRACT_UI);
 
     }
 
     public void saveBtn(View view) {
 
         //本数の入力フォームの入力テキストをintデータにする
-        EditText editTextNum = (EditText) this.findViewById(R.id.editTextNum);
+
         Editable getText = editTextNum.getText();
         //値段の入力フォームの入力テキストをintデータにする
         Editable getText2 = editTextPrice.getText();
@@ -169,5 +174,4 @@ public class EditKarteActivity extends BaseActivity {
 
         }
     }
-
 }
